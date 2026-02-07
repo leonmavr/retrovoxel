@@ -7,7 +7,7 @@
 	stdenv,
 	...
 }:
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
 	pname = "retrocube";
 	version = "1.0";
 	# dont include nix and version control files in the source
@@ -29,8 +29,8 @@ stdenv.mkDerivation rec {
 		cp cube $out/bin
 	'';
 
-	meta = with lib; {
+	meta = {
 		mainProgram = "cube";
-		license = licenses.mit;
+		license = lib.licenses.mit;
 	};
 }
